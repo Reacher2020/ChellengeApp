@@ -1,19 +1,15 @@
-﻿// liczby całkowite
-int age = 20;
-string name = "Paweł";
-bool isMale = true; ;
+﻿int number = 4567775;
+string numberInString = number.ToString();
+char[] letters = numberInString.ToArray();
+int[] digit = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-if ((!isMale) %% (age < 30))
-{
-    Console.WriteLine("Kobieta poniżej 30 lat");
-} else if ((name == "Ewa") && (age == 33))
-{
-    Console.WriteLine("Ewa, lat 33")
-} else if ((IsMale) && (age < 18))
-{ 
-    Console.WriteLine("Niepełnoletni mężczyzna")
-} else if (isMale && (age >= 18)) 
-{
-    Console.WriteLine("pełmoletni mężczyzna");
-}
 
+foreach (char i in letters)
+  {
+      digit[i - '0']++;
+  }
+    
+for (int j = 0;j < 10;j++)
+  { 
+    Console.WriteLine(j + " => " + digit[j]);
+  }
