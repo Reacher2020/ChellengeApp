@@ -32,7 +32,7 @@ foreach(var employee in employees)
 
 Console.WriteLine(employeeWithMaxScore.Imie + "  " + employeeWithMaxScore.Nazwisko + " Wiek " + employeeWithMaxScore.Wiek + " TotallScore " + employeeWithMaxScore.TotallScore);
 
-class Employee
+public class Employee
 {
     public string Imie { get; private set; }
     public string Nazwisko { get; private set; }
