@@ -105,9 +105,9 @@
 
             for (int grade=0;grade < this.Grades.Count;grade++)
             {
-                statistics.Min = Math.Min(statistics.Min, grade);
-                statistics.Max = Math.Max(statistics.Max, grade);
-                statistics.Average += grade;
+                statistics.Min = Math.Min(statistics.Min, this.Grades[grade]);
+                statistics.Max = Math.Max(statistics.Max, this.Grades[grade]);
+                statistics.Average += this.Grades[grade];
             }
             statistics.Average /= this.Grades.Count;
 
