@@ -51,7 +51,69 @@
             this.AddGrade((float)grade);
         }
 
-        public Statistics GetStatistics()
+        public Statistics GetStatisticsWithDoWhile()
+        {
+            var statistics = new Statistics();
+
+            statistics.Average = 0;
+            statistics.Min = float.MaxValue;
+            statistics.Max = float.MinValue;
+
+            int grade = 0;
+            do
+            {
+                statistics.Min = Math.Min(statistics.Min, this.Grades[grade]);
+                statistics.Max = Math.Max(statistics.Max, this.Grades[grade]);
+                statistics.Average += this.Grades[grade];
+                grade++;
+            } while (grade < this.Grades.Count);
+
+            statistics.Average /= this.Grades.Count;
+
+            return statistics;
+        }
+
+        public Statistics GetStatisticsWithWhile()
+        {
+            var statistics = new Statistics();
+
+            statistics.Average = 0;
+            statistics.Min = float.MaxValue;
+            statistics.Max = float.MinValue;
+
+            int grade = 0;
+
+            while (grade < this.Grades.Count);
+            {
+                statistics.Min = Math.Min(statistics.Min, this.Grades[grade]);
+                statistics.Max = Math.Max(statistics.Max, this.Grades[grade]);
+                statistics.Average += this.Grades[grade];
+                grade++;
+            } 
+            statistics.Average /= this.Grades.Count;
+
+            return statistics;
+        }
+
+        public Statistics GetStatisticsWithFor()
+        {
+            var statistics = new Statistics();
+
+            statistics.Average = 0;
+            statistics.Min = float.MaxValue;
+            statistics.Max = float.MinValue;
+
+            for (int grade=0;grade < this.Grades.Count;grade++)
+            {
+                statistics.Min = Math.Min(statistics.Min, grade);
+                statistics.Max = Math.Max(statistics.Max, grade);
+                statistics.Average += grade;
+            }
+            statistics.Average /= this.Grades.Count;
+
+            return statistics;
+        }
+        public Statistics GetStatisticsWithForeach()
         {
             var statistics = new Statistics();
 
