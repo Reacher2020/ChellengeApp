@@ -14,12 +14,46 @@
 
         public void AddGrade(float grade)
         {
-           this.Grades.Add(grade);
+            if (grade >= 0 && grade <= 100)
+            {
+                this.Grades.Add(grade);
+            }
+            else
+            {
+                Console.WriteLine("Inwalid grade value");
+            }
+        }
+
+        public void AddGrade(string grade)
+        {
+            if (float.TryParse(grade, out float result))
+            {
+                this.AddGrade(result);
+            }
+            else
+            {
+                Console.WriteLine("string is not float.");
+            }
+        }
+ 
+        public void AddGrade(int grade)
+        {
+            this.AddGrade((float)grade);
+        }
+
+        public void AddGrade(double grade)
+        {
+            this.AddGrade((float)grade);
+        }
+
+        public void AddGrade(long grade)
+        {
+            this.AddGrade((float)grade);
         }
 
         public Statistics GetStatistics()
         {
-            var statistics = new Statistics(); ;
+            var statistics = new Statistics();
 
             statistics.Average = 0;
             statistics.Min = float.MaxValue;
